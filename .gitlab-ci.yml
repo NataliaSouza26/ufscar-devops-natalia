@@ -6,8 +6,7 @@ stages:
     - build
     - artifact
     - deploy
-    
-#arquivo descritivo
+
 validate:
     stage: validate
     script: 
@@ -16,11 +15,11 @@ validate:
 unit-test:
     stage: test
     script:
-        -mvn test
+        - mvn test
 building:
     stage: build
     script:
-        -mvn package
+        - mvn package
         
         
     
