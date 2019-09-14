@@ -21,6 +21,18 @@ building:
     script:
         - mvn package
         
+deploy:
+    stage: deploy
+    script:
+        - git remote add heroku https://natalia.souza126:$HEROKU_KEY@git.heroku.com/ufscar-devops-nataliasouza.git
+        - git push heroku master
         
+    environment:
+        name: producao
+        url: https://ufscar-devops-nataliasouza.herokuapps.com
+        
+    only: 
+    - master
+    when: manual
     
     
